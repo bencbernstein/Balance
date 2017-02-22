@@ -17,40 +17,24 @@ class App extends React.Component  {
 
     this.state = {products: []};
 
-    // this.state = {
-    //   products: [
-    //       {
-    //    "name" : "Steven Olson Photographic Print",
-    //    "img" : "http://stephenolson .com/images/dove.jpg",
-    //    "description" : "This print benefits the ACLU",
-    //     "category" : "Artwork"},
-    //       {
-    //     "name" : "Ally Bernstein Linocut",
-    //     "img" : "http://allybernstein.com/files/gimgs/th-5_relief1.jpg",
-    //     "description" : "This print benefits the SPLC",
-    //      "category" : "Artwork"},
-    //    ],
-    // };
-
-    // url (required), options (optional)
     fetch('https://balance-api.herokuapp.com/product?category=all&sortKey=date_added&ascDesc=asc', {
-      method: 'get',
+      headers:{
+       'Access-Control-Allow-Origin':'*',
+       'Content-Type': 'multipart/form-data'
+        },
       mode: 'no-cors',
-      headers: {'Access-Control-Allow-Origin': '*'}
     }).then(function(response) {
-        console.log(response)
+      console.log(response)
+      this.setState ({ products: response
+      });
     }).catch(function(err) {
-    // Error :(
+
     });
 
 }
   render() {
-
-
-
       return (
         <div>
-
           <Header  />
           <Body products={this.state.products} />
           <Footer />
@@ -58,6 +42,5 @@ class App extends React.Component  {
       )
   }
 };
-
 
 ReactDOM.render(<App />, document.querySelector('.container'));
