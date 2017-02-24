@@ -1,46 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/header';
-import Body from './components/body';
-import Footer from './components/footer';
-import Fetch from 'react-fetch';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
 
-class App extends React.Component  {
+import App from './components/app';
+import reducers from './reducers';
 
-  // const showArtwork = (e) => {
-  //   e.preventDefault();
-  //   console.log('ShowArt link was clicked.');
-  // };
+// make this an express app
+// use CORS package
+ 
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-  constructor(props) {
-    super(props);
-
-    this.state = {products: []};
-
-    fetch('https://balance-api.herokuapp.com/product?category=all&sortKey=date_added&ascDesc=asc', {
-      headers:{
-       'Access-Control-Allow-Origin':'*',
-       'Content-Type': 'multipart/form-data'
-        },
-      mode: 'no-cors',
-    }).then(function(response) {
-      console.log(response)
-      this.setState ({ products: response
-      });
-    }).catch(function(err) {
-
-    });
-
-}
-  render() {
-      return (
-        <div>
-          <Header  />
-          <Body products={this.state.products} />
-          <Footer />
-        </div>
-      )
-  }
-};
-
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.querySelector('.container'));
