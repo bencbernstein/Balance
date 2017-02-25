@@ -1,11 +1,12 @@
-import { FETCH_WEATHER } from '../actions/index';
+import { FETCH_BOOKS, FETCH_HOMEWARE} from '../actions/index';
 
 export default function(state = [], action) {
   switch (action.type) {
-  case FETCH_WEATHER:
+  case FETCH_BOOKS: case FETCH_HOMEWARE:
     /// similar: return state.concat([action.payload.data]);
     console.log(action.payload.data)
-    return [action.payload.data.results, ...state];
+    return [action.payload.data.results];
+    //return [action.payload.data.results, ...state];
   }
   return state;
 }
