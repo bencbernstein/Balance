@@ -8,12 +8,10 @@ class ProductList extends Component {
       results.map((item) =>
       <Col xs={6} md={3}>
         <Thumbnail href="#" alt="171x180" src={item.imageUrl} />
-         <div><b>{item.title}</b> {item.fromEntity} </div>
-          <br />
-           <div>{item.description} </div>
-             <div>${item.price} </div>
+         <h4>{item.title} </h4>
+          <h4 className="grey">{item.fromEntity} </h4>
+             <h4 className="grey">${item.price} </h4>
       </Col>
-
         )
     );
   };

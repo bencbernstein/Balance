@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchBooks, fetchHomeware} from '../actions/index';
-import { Navigation, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Navigation, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -39,7 +39,8 @@ class SearchBar extends Component {
   render() {
     return (
 
-      <Nav bsStyle="tabs" activeKey="1" onSelect={this.categorySelect}>
+      <Nav  justified activeKey="1" onSelect={this.categorySelect}>
+          <h1 className="brand">Balance</h1>
         <NavItem eventKey="1" title="Artwork">Artwork</NavItem>
         <NavItem eventKey="2" title="Handmade">Handmade</NavItem>
         <NavItem eventKey="3" title="Clothing">Clothing</NavItem>

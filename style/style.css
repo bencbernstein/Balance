@@ -1,9 +1,40 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+body,h1 {
+  font-family: 'Montserrat', sans-serif;
+}
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+h1 {
+  color: #c64e46
+}
+
+li, a {
+  text-transform: uppercase;
+  color: #909090;
+}
 
 .container {
   text-align: center;
+}
+.thumbnail {
+  background-color: inherit !important;
+  border: inherit !important;
+}
+.grey {
+  color: grey;
+}
+
+.nav {
+  border-bottom: 2px solid #d3d3d3;
+  margin-bottom: 20px !important;
+}
+
+.product-title {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.brand {
+  padding: 25px 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
