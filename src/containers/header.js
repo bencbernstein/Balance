@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchBooks, fetchHomeware} from '../actions/index';
+import { fetchArtwork, fetchHandmade, fetchClothing, fetchBooks, fetchHomeware} from '../actions/index';
 import { Navbar, Navigation, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router';
 
@@ -19,13 +19,12 @@ class Header extends Component {
   categorySelect(eventKey) {
     switch (eventKey) {
       case "1":
-        //fetch art
+        return this.props.fetchArtwork();
       case "2":
-        //fetchhandmade
+        return this.props.fetchHandmade();
       case "3":
-        //fetchclothing
+        return this.props.fetchClothing();
       case "4":
-          console.log('case 4');
           return this.props.fetchBooks();
       case "5":
           return this.props.fetchHomeware();
@@ -34,7 +33,7 @@ class Header extends Component {
 
   render() {
     return (
-      
+
       <Nav  justified activeKey="1" onSelect={this.categorySelect}>
           <Link to=""><h1 className="brand">Balance</h1></Link>
         <NavItem eventKey="1" title="Artwork"><Link to={`/artwork`}>Artwork</Link></NavItem>
@@ -48,7 +47,7 @@ class Header extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchBooks, fetchHomeware }, dispatch);
+  return bindActionCreators({ fetchArtwork, fetchHandmade, fetchClothing, fetchBooks, fetchHomeware }, dispatch);
 }
                       // null means no state
 export default connect(null, mapDispatchToProps)(Header);

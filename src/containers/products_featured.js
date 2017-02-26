@@ -19,13 +19,14 @@ class ProductsFeatured extends Component {
     return (
       results.map((item) =>
                <Carousel.Item>
-                 <Link to={`/product/${item.title}`}>
-                    <h3>{item.title}</h3>
+                 <Link to={`/product/${item.pid}`}>
+                    <h3 className="title">{item.title}  </h3>
                     <img src={item.imageUrl}/>
-                    <h4 className="grey">{item.fromEntity} </h4>
-                    <h4> ${item.price} </h4>
+                    <h4 className="grey"> {item.fromEntity} </h4>
+                    <h4 className="grey"> ${item.price} </h4>
                   </Link>
                </Carousel.Item>
+
 
         )
     );

@@ -1,13 +1,11 @@
 import { FETCH_SELECTED_PRODUCT} from '../actions/index';
 
-const INITIAL_STATE = { all: [], post: null };
-
-export default function(state = INITIAL_STATE, action) {
-  switch(action.type){
+export default function(state = [], action) {
+  switch (action.type) {
   case FETCH_SELECTED_PRODUCT:
-    // new object, current state, add in everything
-    return { ...state, all: action.payload.data }
-  default:
-    return state
+
+    console.log( action.payload.data.result)
+    return [action.payload.data.result];
   }
+  return state;
 }

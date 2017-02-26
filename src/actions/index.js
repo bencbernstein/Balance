@@ -16,6 +16,45 @@ export function fetchFeaturedProduct() {
   };
 }
 
+export const FETCH_ARTWORK = 'FETCH_ARTWORK';
+
+export function fetchArtwork() {
+  //const url = `${ROOT_URL}&q=${city},us`;
+  const herokuURL = `http://balance-api.herokuapp.com/product?category=Artwork&sortKey=date_added&ascDesc=asc`;
+  const request = axios.get(herokuURL)
+
+  return {
+    type: FETCH_ARTWORK,
+    payload: request
+  };
+}
+
+export const FETCH_HANDMADE = 'FETCH_HANDMADE';
+
+export function fetchHandmade() {
+  //const url = `${ROOT_URL}&q=${city},us`;
+  const herokuURL = `http://balance-api.herokuapp.com/product?category=Handmade&sortKey=date_added&ascDesc=asc`;
+  const request = axios.get(herokuURL)
+
+  return {
+    type: FETCH_HANDMADE,
+    payload: request
+  };
+}
+
+export const FETCH_CLOTHING = 'FETCH_CLOTHING';
+
+export function fetchClothing() {
+  //const url = `${ROOT_URL}&q=${city},us`;
+  const herokuURL = `http://balance-api.herokuapp.com/product?category=Clothing&sortKey=date_added&ascDesc=asc`;
+  const request = axios.get(herokuURL)
+
+  return {
+    type: FETCH_CLOTHING,
+    payload: request
+  };
+}
+
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 
 export function fetchBooks() {
@@ -44,9 +83,10 @@ export function fetchHomeware() {
 
 export const FETCH_SELECTED_PRODUCT = 'FETCH_SELECTED_PRODUCT';
 
-export function fetchSelectedProduct() {
+export function fetchSelectedProduct(id) {
   //const url = `${ROOT_URL}&q=${city},us`;
-  const herokuURL = `http://balance-api.herokuapp.com/product?category=all&sortKey=date_added&ascDesc=asc`;
+  const ID = id;
+  const herokuURL = `https://balance-api.herokuapp.com/product/details?id=${ID}`;
   const request = axios.get(herokuURL)
 
   return {
