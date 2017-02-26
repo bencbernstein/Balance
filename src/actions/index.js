@@ -18,7 +18,6 @@ export function fetchBooks() {
 
 export const FETCH_HOMEWARE = 'FETCH_HOMEWARE';
 
-
 export function fetchHomeware() {
   //const url = `${ROOT_URL}&q=${city},us`;
   const herokuURL = `http://balance-api.herokuapp.com/product?category=Home&sortKey=date_added&ascDesc=asc`;
@@ -26,6 +25,19 @@ export function fetchHomeware() {
 
   return {
     type: FETCH_HOMEWARE,
+    payload: request
+  };
+}
+
+export const FETCH_SELECTED_PRODUCT = 'FETCH_SELECTED_PRODUCT';
+
+export function fetchSelectedProduct() {
+  //const url = `${ROOT_URL}&q=${city},us`;
+  const herokuURL = `http://balance-api.herokuapp.com/product?category=all&sortKey=date_added&ascDesc=asc`;
+  const request = axios.get(herokuURL)
+
+  return {
+    type: FETCH_SELECTED_PRODUCT,
     payload: request
   };
 }

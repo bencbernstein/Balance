@@ -1,34 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Col, Row, Thumbnail} from 'react-bootstrap';
+
+import { Link } from 'react-router';
 
 class ProductList extends Component {
-  renderProducts(results) {
+  constructor(props) {
+    super(props);
+
+  }
+
+  renderCategory(results) {
     return (
       results.map((item) =>
-      <Col xs={6} md={3}>
-        <Thumbnail href="#" alt="171x180" src={item.imageUrl} />
-         <h4>{item.title} </h4>
-          <h4 className="grey">{item.fromEntity} </h4>
-             <h4 className="grey">${item.price} </h4>
-      </Col>
+        <Link to={`/${item.title}`}>
+          <div className="col-md-4 ">
+            <img src= {item.imageUrl}> </img>
+            <h4> {item.title} </h4>
+            <h4 className="grey">{item.fromEntity} </h4>
+            <h4 className="grey"> ${item.price} </h4>
+          </div>
+          </Link>
+
         )
     );
   };
+
   render() {
     return (
-      <Grid>
-        <Row>
-
-          {this.props.products.map(this.renderProducts)}
-
-        </Row>
-        </Grid>
+      <div className="row">
+          {this.props.products.map(this.renderCategory)}
+        </div>
     );
   };
+
 }
 
-function mapStateToProps({ products }) {
+
+
+
+function mapStateToProps({ products}) {
   return { products }; // { weather } === { weather: weather}
 };
 

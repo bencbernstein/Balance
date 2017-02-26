@@ -5,9 +5,15 @@ body,h1 {
 h1 {
   color: #c64e46
 }
-
-li, a {
-  text-transform: uppercase;
+a {
+  color: #909090;
+}
+a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+li > a {
+  /*text-transform: uppercase;*/
   color: #909090;
 }
 
