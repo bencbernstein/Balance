@@ -34,14 +34,14 @@ class Header extends Component {
 
   render() {
     return (
-
+      
       <Nav  justified activeKey="1" onSelect={this.categorySelect}>
-          <Link to="/"><h1 className="brand">Balance</h1></Link>
-        <NavItem eventKey="1" title="Artwork">Artwork</NavItem>
-        <NavItem eventKey="2" title="Handmade">Handmade</NavItem>
-        <NavItem eventKey="3" title="Clothing">Clothing</NavItem>
-        <NavItem eventKey="4" title="Books">Books</NavItem>
-        <NavItem eventKey="5" title="Homeware">Homeware</NavItem>
+          <Link to=""><h1 className="brand">Balance</h1></Link>
+        <NavItem eventKey="1" title="Artwork"><Link to={`/artwork`}>Artwork</Link></NavItem>
+        <NavItem eventKey="2" title="Handmade"><Link to={`/handmade`}>Handmade</Link></NavItem>
+        <NavItem eventKey="3" title="Clothing"><Link to={`/clothing`}>Clothing</Link></NavItem>
+        <NavItem eventKey="4" title="Books"><Link to={`/books`}>Books</Link></NavItem>
+        <NavItem eventKey="5" title="Homeware"><Link to={`/homeware`}>Homeware</Link></NavItem>
       </Nav>
     );
   };

@@ -3,6 +3,19 @@ import axios from 'axios';
 const API_KEY = '5816cda4f2d9a3951b14c87316cbaa88';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
+export const FETCH_FEATURED = 'FETCH_FEATURED';
+
+export function fetchFeaturedProduct() {
+  //const url = `${ROOT_URL}&q=${city},us`;
+  const herokuURL = `http://balance-api.herokuapp.com/product?category=all&sortKey=date_added&ascDesc=desc`;
+  const request = axios.get(herokuURL)
+
+  return {
+    type: FETCH_FEATURED,
+    payload: request
+  };
+}
+
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 
 export function fetchBooks() {

@@ -6,13 +6,12 @@ import { Link } from 'react-router';
 class ProductList extends Component {
   constructor(props) {
     super(props);
-
   }
 
   renderCategory(results) {
     return (
       results.map((item) =>
-        <Link to={`/${item.title}`}>
+        <Link to={`/product/${item.title}`}>
           <div className="col-md-3 col-xs-12 ">
             <img className="img-rounded img-responsive" src= {item.imageUrl}> </img>
             <h5> {item.title} </h5>
@@ -34,8 +33,6 @@ class ProductList extends Component {
   };
 
 }
-
-
 
 
 function mapStateToProps({ products}) {

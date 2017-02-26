@@ -2,22 +2,51 @@ body,h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1, h5 {
-  color: #c64e46
+h1, h2, h3, h4, h5 {
+  color: #c64e46;
+
 }
+
 a {
   color: #909090;
 }
 
+a:hover, a:focus {
+  text-decoration: none;
+  color: #909090;
+}
 
+img {
+    margin: 0px auto;
+    border: 0;
+    padding: 10px;
+}
+
+/* Carousel  */
+
+.carousel-inner {
+  margin: 50px auto;
+}
+.carousel-indicators {
+  display: none;
+}
+
+.carousel-control, .carousel-control:hover  {
+  text-shadow: none;
+  color: black;
+}
+
+.carousel-control:visited {
+  color: #909090;
+}
+.carousel-control.left, .carousel-control.right {
+  background: none;
+}
 
 .img-rounded {
   margin: 0px auto 20px;
 }
 
-a:hover, a:focus {
-  text-decoration: none;
-}
 .nav > li {
     text-transform: uppercase;
 }
