@@ -2,18 +2,26 @@ body,h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
+h1, h5 {
   color: #c64e46
 }
 a {
   color: #909090;
 }
-a:hover {
+
+
+
+.img-rounded {
+  margin: 0px auto 20px;
+}
+
+a:hover, a:focus {
   text-decoration: none;
-  opacity: 0.8;
+}
+.nav > li {
+    text-transform: uppercase;
 }
 li > a {
-  /*text-transform: uppercase;*/
   color: #909090;
 }
 

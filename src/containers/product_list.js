@@ -13,11 +13,11 @@ class ProductList extends Component {
     return (
       results.map((item) =>
         <Link to={`/${item.title}`}>
-          <div className="col-md-4 ">
-            <img src= {item.imageUrl}> </img>
-            <h4> {item.title} </h4>
-            <h4 className="grey">{item.fromEntity} </h4>
-            <h4 className="grey"> ${item.price} </h4>
+          <div className="col-md-3 col-xs-12 ">
+            <img className="img-rounded img-responsive" src= {item.imageUrl}> </img>
+            <h5> {item.title} </h5>
+            <h5 className="grey">{item.fromEntity} </h5>
+            <h5 className="grey"> ${item.price} </h5>
           </div>
           </Link>
 

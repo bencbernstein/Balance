@@ -29,13 +29,12 @@ class Header extends Component {
           return this.props.fetchBooks();
       case "5":
           return this.props.fetchHomeware();
-      default:
-          console.log('hitdefault')
     }
   }
 
   render() {
     return (
+
       <Nav  justified activeKey="1" onSelect={this.categorySelect}>
           <Link to="/"><h1 className="brand">Balance</h1></Link>
         <NavItem eventKey="1" title="Artwork">Artwork</NavItem>
