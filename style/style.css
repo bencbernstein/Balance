@@ -7,6 +7,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   color: #c64e46;
+  margin-bottom: .7rem;
   letter-spacing: .15em;
 }
 
@@ -18,6 +19,7 @@ h5 {
 
 a {
   color: #909090;
+  transition: .1s all linear;
 }
 
 a:hover, a:focus {
@@ -29,14 +31,19 @@ img {
     margin: 0px auto;
     border: 0;
     padding: 10px;
+    max-width: 90%;
 }
 
 
 
 /* Carousel  */
 
+.carousel-inner>.item>a>img {
+  max-height: 500px;
+}
 .carousel-inner {
   margin: 50px auto;
+
 }
 .carousel-indicators {
   display: none;
@@ -109,13 +116,39 @@ li > a {
   text-transform: uppercase;
 }
 
+.carousel-title {
+  /*right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;*/
+
+}
+
 .price {
 color: black;
 font-weight: 600;
+padding: 8px 0 15px 0;
 margin: 10px auto;
 font-size: 1em;
   line-height: 1.5;
 }
+.buyLink {
+  border: 1px solid black;
+  padding: 5px 7px;
+  color: black;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+.buyLink:hover {
+
+  color: #c64e46;
+
+}
+
 
 .brand {
   margin: 30px 0px 14px 0px;

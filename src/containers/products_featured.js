@@ -20,10 +20,11 @@ class ProductsFeatured extends Component {
       results.map((item) =>
                <Carousel.Item>
                  <Link to={`/product/${item.pid}`}>
-                    <h3 className="title">{item.title}  </h3>
+                    <h3 className="title carousel-title"> {item.title} </h3>
                     <img src={item.imageUrl}/>
-                    <h4 className="grey"> {item.fromEntity} </h4>
+                    <h4 className="grey"> {item.fromEntity}  </h4>
                     <h4 className="grey"> ${item.price} </h4>
+
                   </Link>
                </Carousel.Item>
 
@@ -34,7 +35,7 @@ class ProductsFeatured extends Component {
 
   render() {
     return (
-        <Carousel interval="10000" >
+        <Carousel >
             {this.props.featuredProducts.map(this.renderFeatured)}
         </Carousel>
     );

@@ -26,7 +26,7 @@ class ProductDetail extends Component {
                           <div className="col-md-6 left">
                           <h3 className="title">{item.title}  </h3>
                           <h5 className="grey">{item.fromEntity} </h5>
-                          <h4 className="price"> ${item.price} </h4>
+                          <h4 className="price"> ${item.price} <a className="buyLink" target="blank" href={item.fromEntityUrl}> Buy Now+ </a> </h4>
                           <hr />
                           <p> {item.description} </p>
                         </div>

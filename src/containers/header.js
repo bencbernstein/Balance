@@ -28,6 +28,8 @@ class Header extends Component {
           return this.props.fetchBooks();
       case "5":
           return this.props.fetchHomeware();
+        default:
+          return this.props.fetchHomeware();
     }
   }
 
