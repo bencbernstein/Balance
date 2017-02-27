@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { Link } from 'react-router';
+import { bindActionCreators } from 'redux';
+import { fetchCategory } from '../actions/index';
 
 class ProductList extends Component {
   constructor(props) {
     super(props);
   }
+
+  componentWillMount() {
+    console.log('about to mount');
+    console.log(this.props.params.category);
+    console.log('about to fetch');
+    this.props.fetchCategory(this.props.params.category);
+  }
+
+
 
   renderCategory(results) {
     return (
@@ -25,19 +35,25 @@ class ProductList extends Component {
   };
 
   render() {
+    console.log(this.props.params.category);
+
     return (
       <div className="row">
-          {this.props.products.map(this.renderCategory)}
-        </div>
+        {this.props.products.map(this.renderCategory)}
+       </div>
+
     );
   };
+}
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchCategory }, dispatch);
 }
 
 
 function mapStateToProps({ products}) {
-  return { products }; // { weather } === { weather: weather}
+  return { products };
 };
 
 // exporting the conected version
-export default connect(mapStateToProps)(ProductList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

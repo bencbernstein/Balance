@@ -10,7 +10,7 @@ import ProductDetail from './containers/product_detail';
 export default (
   <Route path="/" component={App} >
     <IndexRoute component={ProductsFeatured} />
-    <Route path =":category" component={ProductsList} />
+    <Route path ="/:category" component={ProductsList} />
     <Route path ="/product/:name" component={ProductDetail} />
   </Route>
 );

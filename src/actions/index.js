@@ -15,67 +15,17 @@ export function fetchFeaturedProduct() {
   };
 }
 
-export const FETCH_ARTWORK = 'FETCH_ARTWORK';
+export const FETCH_CATEGORY = 'FETCH_CATEGORY';
 
-export function fetchArtwork() {
+export function fetchCategory(cat) {
   //const url = `${ROOT_URL}&q=${city},us`;
-  const herokuURL = `https://balance-api.herokuapp.com/product?category=Artwork&sortKey=date_added&ascDesc=asc`;
+  const category = cat.replace(/\b\w/g, function(l){ return l.toUpperCase() })
+  const herokuURL = `https://balance-api.herokuapp.com/product?category=` + category + `&sortKey=date_added&ascDesc=desc`;
+
   const request = axios.get(herokuURL)
 
   return {
-    type: FETCH_ARTWORK,
-    payload: request
-  };
-}
-
-export const FETCH_HANDMADE = 'FETCH_HANDMADE';
-
-export function fetchHandmade() {
-  //const url = `${ROOT_URL}&q=${city},us`;
-  const herokuURL = `https://balance-api.herokuapp.com/product?category=Handmade&sortKey=date_added&ascDesc=asc`;
-  const request = axios.get(herokuURL)
-
-  return {
-    type: FETCH_HANDMADE,
-    payload: request
-  };
-}
-
-export const FETCH_CLOTHING = 'FETCH_CLOTHING';
-
-export function fetchClothing() {
-  //const url = `${ROOT_URL}&q=${city},us`;
-  const herokuURL = `https://balance-api.herokuapp.com/product?category=Clothing&sortKey=date_added&ascDesc=asc`;
-  const request = axios.get(herokuURL)
-
-  return {
-    type: FETCH_CLOTHING,
-    payload: request
-  };
-}
-
-export const FETCH_BOOKS = 'FETCH_BOOKS';
-
-export function fetchBooks() {
-  //const url = `${ROOT_URL}&q=${city},us`;
-  const herokuURL = `https://balance-api.herokuapp.com/product?category=Books&sortKey=date_added&ascDesc=asc`;
-  const request = axios.get(herokuURL)
-
-  return {
-    type: FETCH_BOOKS,
-    payload: request
-  };
-}
-
-export const FETCH_HOMEWARE = 'FETCH_HOMEWARE';
-
-export function fetchHomeware() {
-  //const url = `${ROOT_URL}&q=${city},us`;
-  const herokuURL = `https://balance-api.herokuapp.com/product?category=Homeware&sortKey=date_added&ascDesc=asc`;
-  const request = axios.get(herokuURL)
-
-  return {
-    type: FETCH_HOMEWARE,
+    type: FETCH_CATEGORY,
     payload: request
   };
 }
